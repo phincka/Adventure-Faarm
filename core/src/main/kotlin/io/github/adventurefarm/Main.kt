@@ -19,10 +19,9 @@ class Main : KtxGame<KtxScreen>(), EventListener {
     val gameStage by lazy { Stage(ExtendViewport(16f, 9f), batch) }
     val uiStage by lazy { Stage(ExtendViewport(320f, 180f), batch) }
 
-
     override fun create() {
         Gdx.app.logLevel = Application.LOG_DEBUG
-
+//Dev test
         gameStage.addListener(this)
 
         addScreen(GameScreen(this))
