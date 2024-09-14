@@ -1,0 +1,25 @@
+# Actions
+import attack:"io.github.adventurefarm.behavior.slime.AttackTask"
+import move:"io.github.adventurefarm.behavior.slime.MoveTask"
+import wander:"io.github.adventurefarm.behavior.slime.WanderTask"
+import idle:"io.github.adventurefarm.behavior.slime.IdleTask"
+
+# Conditions
+import isEnemyNearby?:"io.github.adventurefarm.behavior.IsEnemyNearby"
+import canAttack?:"io.github.adventurefarm.behavior.CanAttack"
+
+subtree name:"attack"
+  sequence
+    (isEnemyNearby?) (canAttack? range:1.0) attack
+    wait seconds:"uniform,1.25,2.1"
+
+subtree name:"move"
+  sequence
+    (isEnemyNearby?) move range:2.0
+
+root
+  selector
+    $attack
+    $move
+    (random success:0.25) idle duration:"uniform,2.0,3.5"
+    wander range:6.0
