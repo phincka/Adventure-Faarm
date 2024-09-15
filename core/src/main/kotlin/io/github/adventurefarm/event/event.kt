@@ -12,8 +12,6 @@ data class MapChangeEvent(val map: TiledMap) : Event()
 
 data class CollisionDespawnEvent(val cell: Cell) : Event()
 
-class EntityLootEvent : Event()
-
 data class EntityFarmEvent(val atlasKey: String) : Event()
 
 data class UserHasNewLevel(val user: PlayerComponent) : Event()

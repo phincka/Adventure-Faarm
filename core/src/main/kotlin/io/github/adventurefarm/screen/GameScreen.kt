@@ -9,6 +9,7 @@ import com.github.quillraven.fleks.world
 import io.github.adventurefarm.Main
 import io.github.adventurefarm.component.ImageComponent.Companion.ImageComponentListener
 import io.github.adventurefarm.component.PhysicComponent.Companion.PhysicComponentListener
+import io.github.adventurefarm.component.PlayerComponent
 import io.github.adventurefarm.component.StateComponent.Companion.StateComponentListener
 import io.github.adventurefarm.event.MapChangeEvent
 import io.github.adventurefarm.event.fire
@@ -20,6 +21,7 @@ import io.github.adventurefarm.system.CollisionDespawnSystem
 import io.github.adventurefarm.system.CollisionSpawnSystem
 import io.github.adventurefarm.system.EntitySpawnSystem
 import io.github.adventurefarm.system.FarmSystem
+import io.github.adventurefarm.system.LevelSystem
 import io.github.adventurefarm.system.MoveSystem
 import io.github.adventurefarm.system.PhysicSystem
 import io.github.adventurefarm.system.RenderSystem
@@ -37,6 +39,7 @@ class GameScreen(game: Main) : KtxScreen {
     private val gameStage = game.gameStage
     private val uiStage = game.uiStage
     private val gameAtlas = TextureAtlas("graphics/game.atlas")
+    private val player = PlayerComponent()
     private val phWorld = createWorld(gravity = Vector2.Zero).apply {
         autoClearForces = false
     }
@@ -47,6 +50,7 @@ class GameScreen(game: Main) : KtxScreen {
             add("GameStage", gameStage)
             add("UiStage", uiStage)
             add("GameAtlas", gameAtlas)
+            add("Player", player)
         }
 
         components {
@@ -63,6 +67,7 @@ class GameScreen(game: Main) : KtxScreen {
             add<AnimationSystem>()
             add<MoveSystem>()
             add<FarmSystem>()
+            add<LevelSystem>()
             add<CameraSystem>()
             add<RenderSystem>()
         }
@@ -80,7 +85,7 @@ class GameScreen(game: Main) : KtxScreen {
 
         // UI
         uiStage.actors {
-            gameView(GameModel(eWorld, gameStage))
+            gameView(GameModel(eWorld, gameStage, player))
         }
     }
 
