@@ -21,7 +21,6 @@ class Main : KtxGame<KtxScreen>(), EventListener {
 
     override fun create() {
         Gdx.app.logLevel = Application.LOG_DEBUG
-//Dev test
         gameStage.addListener(this)
 
         addScreen(GameScreen(this))

@@ -30,13 +30,12 @@ class FarmSystem(
     private val playerCmps: ComponentMapper<PlayerComponent>,
     private val phWorld: World,
     @Qualifier("GameStage") private val stage: Stage,
+    @Qualifier("Player") private val player: PlayerComponent,
 ) : IteratingSystem() {
-    override fun onTickEntity(entity: Entity) {
+        override fun onTickEntity(entity: Entity) {
         val farmCmp = farmCmps[entity]
 
         if (farmCmp.doFarm) {
-
-
             val targetX = farmCmp.targetX
             val targetY = farmCmp.targetY
 
@@ -58,12 +57,10 @@ class FarmSystem(
                     return@query true
                 }
 
-                val player = playerCmps[entity]
-
-                player.level++
+                player.addExp = 100
 
                 // If we find an entity at the clicked location, attack it
-                Gdx.app.log("USER", "Postać: ${player.name}, Level: ${player.level}")
+                Gdx.app.log("USER", "FARM SYSTEM: ${player.exp}")
                 Gdx.app.log("ATTACK", "Player is attacking entity: $fixtureEntity")
 
                 world.remove(fixtureEntity)

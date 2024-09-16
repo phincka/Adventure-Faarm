@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="13">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="17">
  <properties>
   <property name="music" value="fields.ogg"/>
  </properties>
@@ -233,19 +233,28 @@
    eJxjYCAPhANxPBCnkqmfUlACxCxAXD5A9g93UDyAdrMCccIA2j/SgTsQRwIx0wDZP1TLlpGQZ/joYAcuMFLSJa50RI86b6SVvQB8hQn5
   </data>
  </layer>
+ <layer id="6" name="farm_field" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMAoGD8hHwqP2jwJaAQBqJQPo
+  </data>
+ </layer>
  <objectgroup id="4" name="entities">
   <object id="1" name="PLAYER" gid="123" x="22.75" y="270" width="48" height="48"/>
   <object id="2" name="CHEST" gid="125" x="400" y="80" width="16" height="16"/>
-  <object id="3" name="SLIME" gid="124" x="379" y="99.75" width="32" height="32"/>
-  <object id="4" name="SLIME" gid="124" x="409.5" y="112.25" width="32" height="32"/>
-  <object id="5" name="SLIME" gid="124" x="87.1703" y="230.541" width="32" height="32"/>
-  <object id="6" name="SLIME" gid="124" x="127.5" y="91" width="32" height="32"/>
-  <object id="7" name="SLIME" gid="124" x="335" y="229.5" width="32" height="32"/>
+  <object id="3" name="SLIME" gid="124" x="88.9857" y="244.024" width="32" height="32"/>
+  <object id="4" name="SLIME" gid="124" x="105.303" y="243.319" width="32" height="32"/>
+  <object id="5" name="SLIME" gid="124" x="89.6156" y="229.563" width="32" height="32"/>
+  <object id="6" name="SLIME" gid="124" x="104.025" y="229.405" width="32" height="32"/>
+  <object id="7" name="SLIME" gid="124" x="120.301" y="229.989" width="32" height="32"/>
   <object id="8" name="CHEST" gid="125" x="432" y="16" width="16" height="16"/>
   <object id="12" name="BLOB" gid="124" x="-5.84651" y="135.405" width="32" height="32">
    <properties>
     <property name="color" type="color" value="#ffaaaaff"/>
    </properties>
   </object>
+  <object id="13" name="SLIME" gid="124" x="121.916" y="244.181" width="32" height="32"/>
+  <object id="14" name="SLIME" gid="124" x="87.3553" y="260.106" width="32" height="32"/>
+  <object id="15" name="SLIME" gid="124" x="103.673" y="259.401" width="32" height="32"/>
+  <object id="16" name="SLIME" gid="124" x="120.286" y="260.263" width="32" height="32"/>
  </objectgroup>
 </map>

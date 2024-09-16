@@ -7,6 +7,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.WidgetGroup
 import com.badlogic.gdx.utils.Scaling
+import com.github.quillraven.fleks.Qualifier
+import io.github.adventurefarm.component.PlayerComponent
 import io.github.adventurefarm.ui.Drawables
 import io.github.adventurefarm.ui.Labels
 import io.github.adventurefarm.ui.get
@@ -22,7 +24,7 @@ import ktx.scene2d.label
 class CharacterInfo(
     charDrawable: Drawables?,
     private val skin: Skin,
-    private val playerLevel: Int = 1
+    private val playerLevel: Int = 1,
 ) : WidgetGroup(), KGroup {
     private val background: Image = Image(skin[Drawables.CHAR_INFO_BGD])
     private val charBgd: Image = Image(if (charDrawable == null) null else skin[charDrawable])
